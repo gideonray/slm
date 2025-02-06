@@ -44,6 +44,7 @@ export async function getPostsForSite(domain: string) {
           image: posts.image,
           imageBlurhash: posts.imageBlurhash,
           createdAt: posts.createdAt,
+          content: posts.content,
         })
         .from(posts)
         .leftJoin(sites, eq(posts.siteId, sites.id))
