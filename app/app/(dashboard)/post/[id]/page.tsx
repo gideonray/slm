@@ -9,7 +9,7 @@ export default async function PostPage({ params }: { params: { id: string } }) {
     redirect("/login");
   }
 
-  const data = await db.query.posts.findFirst({
+  const data: any = await db.query.posts.findFirst({
     where: (posts, { eq }) => eq(posts.id, decodeURIComponent(params.id)),
     with: {
       site: {
